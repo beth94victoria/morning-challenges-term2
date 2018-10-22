@@ -1,3 +1,4 @@
+
 # For this challenge, your Todo List should be able to perform all actions
 # given in the test. Namely you should be able to:
 # 1. create a new todo list with a title and description
@@ -12,7 +13,19 @@
 # To accomplish this, you should define two classes - a TodoList class
 # and a TodoListItem class.
 class TodoList
+    attr_accessor :title
+    def initialize (title) 
+        @title = title
+        @list = [] #makes empty array 
+    end
+    def add_item (list_item) #push list item into the list 
+        @list.push(TodoListItem.new(list_item))
+    end
 end
 
 class TodoListItem
+   def initialize (item_name)
+    @item_name = item_name
+   end
 end
+
