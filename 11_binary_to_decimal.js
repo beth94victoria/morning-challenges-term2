@@ -13,19 +13,26 @@ Test: mocha 11_binary_to_decimal
 */
 
 function binaryToDecimal(binaryNumber) {
-    // Your code here
+    return binaryNumber.toString().split('').reduce(function (x, y, i) {
+        if (y > 1)
+            return null
+        console.log(x, y, i)
+        return (y === '1') ? x + Math.pow(2, i) : x;
+    }, 0);
+
 }
+module.exports = binaryToDecimal
 
-let assert = require('assert')
+// let assert = require('assert')
 
-describe('Binary to decimal', function () {
-    it('Should convert a binary to its decimal value', function () {
-        assert.equal((9),binaryToDecimal(1001))
-        assert.equal((15),binaryToDecimal(1111))
-        assert.equal((31),binaryToDecimal(11111))
-    })
-    it('Should return a null if the binary has a number other than 0 or 1', function () {
-        assert.equal((null),binaryToDecimal(1002))
-        assert.equal((null),binaryToDecimal(1220))
-    })
-})
+// describe('Binary to decimal', function () {
+//     it('Should convert a binary to its decimal value', function () {
+//         assert.equal((9), binaryToDecimal(1001))
+//         assert.equal((15), binaryToDecimal(1111))
+//         assert.equal((31), binaryToDecimal(11111))
+//     })
+//     it('Should return a null if the binary has a number other than 0 or 1', function () {
+//         assert.equal((null), binaryToDecimal(1002))
+//         assert.equal((null), binaryToDecimal(1220))
+//     })
+// })

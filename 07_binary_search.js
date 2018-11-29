@@ -18,6 +18,10 @@ Example:
 
 function binarySearch(sortedArray, searchValue) {
     // Your code here
+    let midPoint = Math.ceil(sortedArray.length / 2);
+    for (searchValue in sortedArray[midPoint]) {
+        sortedArray = sortedArray.filter(x => x < sortedArray[midPoint]);
+    }
 }
 
 
